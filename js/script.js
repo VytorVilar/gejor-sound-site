@@ -1,47 +1,13 @@
-const menu = document.getElementById('menu');
-const mobileToggle = document.getElementById('mobileToggle');
-
-mobileToggle.addEventListener('click', () => {
-  menu.classList.toggle('active');
-  mobileToggle.textContent = menu.classList.contains('active') ? '×' : '☰';
-});
-
-document.querySelectorAll('.menu a').forEach(link => {
-  link.addEventListener('click', () => {
-    menu.classList.remove('active');
-    mobileToggle.textContent = '☰';
-  });
-});
-
-const revealElements = document.querySelectorAll('.reveal');
-
-const revealOnScroll = () => {
-  const trigger = window.innerHeight * 0.86;
-
-  revealElements.forEach(element => {
-    const top = element.getBoundingClientRect().top;
-
-    if (top < trigger) {
-      element.classList.add('active');
-    }
-  });
-};
-
-window.addEventListener('scroll', revealOnScroll);
-window.addEventListener('load', revealOnScroll);
-
-function sendWhatsApp(event) {
-  event.preventDefault();
-
-  const nome = document.getElementById('nome').value.trim();
-  const carro = document.getElementById('carro').value.trim();
-  const tipo = document.getElementById('tipo').value;
-  const mensagem = document.getElementById('mensagem').value.trim();
-
-  const texto = `Olá, GEJOR SOUND! Meu nome é ${nome}. Tenho um ${carro}. Quero orçamento para: ${tipo}. ${mensagem ? 'Mensagem: ' + mensagem : ''}`;
-
-  const telefone = '5511948930695';
-  const url = `https://wa.me/${telefone}?text=${encodeURIComponent(texto)}`;
-
-  window.open(url, '_blank');
-}
+const $=(s,root=document)=>root.querySelector(s);const $$=(s,root=document)=>[...root.querySelectorAll(s)];
+const preloader=$('#preloader'), header=$('#header'), menu=$('#menu'), menuBtn=$('#menuBtn'), topBtn=$('#topBtn'), form=$('#quoteForm');
+window.addEventListener('load',()=>setTimeout(()=>preloader?.classList.add('hide'),450));
+const closeMenu=()=>{menu?.classList.remove('active');menuBtn?.classList.remove('active');menuBtn?.setAttribute('aria-expanded','false');document.body.classList.remove('menu-open')};
+menuBtn?.addEventListener('click',()=>{const open=menu.classList.toggle('active');menuBtn.classList.toggle('active',open);menuBtn.setAttribute('aria-expanded',String(open));document.body.classList.toggle('menu-open',open)});
+$$('a[href^="#"]').forEach(a=>a.addEventListener('click',closeMenu));
+window.addEventListener('scroll',()=>{const y=scrollY;header?.classList.toggle('scrolled',y>20);topBtn?.classList.toggle('show',y>600)});topBtn?.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
+const reveals=$$('.reveal');const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('active');io.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -45px'});reveals.forEach(el=>io.observe(el));
+const sections=$$('main[id],section[id]'), navLinks=$$('.menu a');const navIO=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){navLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id))}})},{threshold:.42});sections.forEach(s=>navIO.observe(s));
+form?.addEventListener('submit',e=>{e.preventDefault();const nome=$('#nome').value.trim(),carro=$('#carro').value.trim(),tipo=$('#tipo').value,mensagem=$('#mensagem').value.trim();const texto=`Olá, GEJOR SOUND! Meu nome é ${nome}. Tenho um ${carro}. Quero orçamento para: ${tipo}.${mensagem?' Mensagem: '+mensagem:''}`;open(`https://wa.me/5511948930695?text=${encodeURIComponent(texto)}`,'_blank')});
+const spot=$('#spotlight');if(matchMedia('(pointer:fine)').matches){window.addEventListener('pointermove',e=>{spot.style.left=e.clientX+'px';spot.style.top=e.clientY+'px'});$$('[data-tilt]').forEach(card=>{card.addEventListener('pointermove',e=>{const r=card.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;card.style.transform=`perspective(900px) rotateY(${x*9}deg) rotateX(${-y*9}deg)`});card.addEventListener('pointerleave',()=>card.style.transform='')})}
+const count=$('[data-count]');if(count){let done=false;const cIO=new IntersectionObserver(es=>{if(es[0].isIntersecting&&!done){done=true;let n=0;const t=setInterval(()=>{n+=4;count.textContent=Math.min(n,100);if(n>=100)clearInterval(t)},20)}},{threshold:.6});cIO.observe(count)}
+const canvas=$('#fxCanvas'), ctx=canvas?.getContext('2d');let particles=[];function resize(){if(!canvas)return;canvas.width=innerWidth*devicePixelRatio;canvas.height=innerHeight*devicePixelRatio;ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0);const total=innerWidth<720?28:70;particles=Array.from({length:total},()=>({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.8+.5,v:Math.random()*.45+.15,o:Math.random()*.45+.12}))}function animate(){if(!ctx)return;ctx.clearRect(0,0,innerWidth,innerHeight);particles.forEach(p=>{p.y-=p.v;if(p.y<-10){p.y=innerHeight+10;p.x=Math.random()*innerWidth}ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=`rgba(5,199,255,${p.o})`;ctx.fill()});requestAnimationFrame(animate)}resize();animate();addEventListener('resize',resize);

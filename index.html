@@ -3,332 +3,174 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GEJOR SOUND | Som Automotivo e Acessórios</title>
-
+  <meta name="description" content="GEJOR SOUND - som automotivo, acessórios, projetos personalizados, instalação, regulagem e acabamento premium." />
+  <meta name="theme-color" content="#05c7ff" />
+  <title>GEJOR SOUND | Som Automotivo de Presença</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800;900&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Orbitron:wght@600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
 </head>
-
 <body>
-  <header>
-    <div class="container nav">
-      <a href="#inicio" class="logo" aria-label="Voltar ao início">
-        <div class="logo-mark">
-          <img src="assets/logo-gejor.png" alt="Logo GEJOR SOUND">
-        </div>
-        <div>
-          <strong>GEJOR SOUND</strong>
-          <span>SOM AUTOMOTIVO E ACESSÓRIOS</span>
-        </div>
-      </a>
+  <div class="preloader" id="preloader">
+    <img src="assets/logo-gejor.png" alt="GEJOR SOUND">
+    <strong>GEJOR SOUND</strong>
+    <span>Preparando a potência...</span>
+  </div>
 
+  <div class="grain"></div>
+  <canvas id="fxCanvas" aria-hidden="true"></canvas>
+  <div class="spotlight" id="spotlight"></div>
+
+  <header class="header" id="header">
+    <div class="container nav">
+      <a href="#inicio" class="brand" aria-label="Voltar ao início">
+        <img src="assets/logo-gejor.png" alt="Logo GEJOR SOUND">
+        <span><b>GEJOR SOUND</b><small>Som Automotivo & Acessórios</small></span>
+      </a>
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false"><i></i><i></i><i></i></button>
       <nav class="menu" id="menu">
         <a href="#servicos">Serviços</a>
-        <a href="#portfolio">Portfólio</a>
+        <a href="#projetos">Projetos</a>
         <a href="#galeria">Galeria</a>
-        <a href="#sobre">Sobre</a>
+        <a href="#metodo">Método</a>
+        <a href="#experiencia">Experiência</a>
         <a href="#youtube">YouTube</a>
         <a href="#contato">Contato</a>
       </nav>
-
-      <a class="btn desktop-btn" href="https://wa.me/5511948930695?text=Olá,%20vim%20pelo%20site%20da%20GEJOR%20SOUND!" target="_blank">WhatsApp</a>
-      <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir menu">☰</button>
+      <a class="btn nav-whats" href="https://wa.me/5511948930695?text=Olá,%20vim%20pelo%20site%20da%20GEJOR%20SOUND!" target="_blank" rel="noopener">Chamar agora</a>
     </div>
   </header>
 
   <main id="inicio" class="hero">
-    <div class="video-bg">
-      <iframe
-        src="https://www.youtube.com/embed/U4esCKGVf0I?autoplay=1&mute=1&controls=0&loop=1&playlist=U4esCKGVf0I&modestbranding=1&rel=0&playsinline=1"
-        title="Vídeo GEJOR SOUND"
-        allow="autoplay; encrypted-media"
-        allowfullscreen>
-      </iframe>
-    </div>
-
+    <div class="video-bg"><iframe src="https://www.youtube.com/embed/U4esCKGVf0I?autoplay=1&mute=1&controls=0&loop=1&playlist=U4esCKGVf0I&modestbranding=1&rel=0&playsinline=1" title="Vídeo GEJOR SOUND" allow="autoplay; encrypted-media"></iframe></div>
     <div class="hero-overlay"></div>
-
     <div class="container hero-grid">
-      <div class="reveal hero-text">
-        <div class="tag"><span class="pulse"></span> Som automotivo • acessórios • projetos personalizados</div>
-
-        <h1>Potência, qualidade e presença com a <span>GEJOR SOUND</span></h1>
-
-        <p>
-          Projetos de som automotivo feitos com capricho, organização e acabamento de respeito.
-          Do som interno ao porta-malas personalizado, cada detalhe recebe atenção.
-        </p>
-
+      <section class="hero-copy reveal">
+        <div class="status"><span></span> Oficina criativa de som automotivo</div>
+        <h1>O carro vira palco. O som vira assinatura.</h1>
+        <p>Projetos de som automotivo com presença, instalação organizada, regulagem caprichada e acabamento digno de vitrine. A GEJOR SOUND entrega aquele trabalho bem feito, sem gambiarra e com personalidade.</p>
         <div class="hero-actions">
-          <a href="#portfolio" class="btn">Ver projetos</a>
-          <a href="https://www.instagram.com/gejorsound?igsh=MWF2M3gyejY2cjdsbA==" target="_blank" class="btn secondary">Instagram</a>
-          <a href="https://www.youtube.com/@GejorVlogs" target="_blank" class="btn ghost">YouTube</a>
+          <a class="btn btn-big" href="#projetos">Ver projetos reais</a>
+          <a class="btn btn-glass" href="https://www.instagram.com/gejorsound?igsh=MWF2M3gyejY2cjdsbA==" target="_blank" rel="noopener">Instagram</a>
+          <a class="btn btn-line" href="https://www.youtube.com/@GejorVlogs" target="_blank" rel="noopener">YouTube</a>
         </div>
-
-        <div class="stats">
-          <div class="stat">
-            <strong>100%</strong>
-            <small>foco no acabamento</small>
-          </div>
-
-          <div class="stat">
-            <strong>GJ</strong>
-            <small>identidade própria</small>
-          </div>
-
-          <div class="stat">
-            <strong>Som</strong>
-            <small>forte e limpo</small>
-          </div>
+        <div class="dash">
+          <div><b data-count="100">0</b><small>% capricho</small></div>
+          <div><b>14.4V</b><small>energia no controle</small></div>
+          <div><b>GJ</b><small>identidade própria</small></div>
         </div>
-      </div>
+      </section>
 
-      <div class="sound-card reveal">
-        <div class="logo-showcase">
-          <img src="assets/logo-gejor.png" alt="GEJOR SOUND">
-        </div>
-
-        <div class="floating-badge">
-          GEJOR SOUND<br>
-          <span>Som Automotivo e Acessórios</span>
-        </div>
-
-        <div class="equalizer" aria-hidden="true">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </div>
-      </div>
+      <aside class="hero-machine reveal" data-tilt>
+        <div class="halo"></div>
+        <img class="machine-logo" src="assets/logo-gejor.png" alt="GEJOR SOUND">
+        <div class="woofer w1"></div><div class="woofer w2"></div>
+        <div class="eq"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="machine-tag">Premium setup <span>Som • Acessórios • Acabamento</span></div>
+      </aside>
     </div>
+    <div class="scroll-cue">Role para ver <span>↓</span></div>
   </main>
 
-  <section id="servicos">
+  <div class="ticker" aria-hidden="true"><div>
+    <span>GEJOR SOUND</span><span>Som interno</span><span>Porta-malas personalizado</span><span>Instalação elétrica</span><span>Regulagem fina</span><span>Acabamento premium</span><span>Projetos reais</span>
+    <span>GEJOR SOUND</span><span>Som interno</span><span>Porta-malas personalizado</span><span>Instalação elétrica</span><span>Regulagem fina</span><span>Acabamento premium</span><span>Projetos reais</span>
+  </div></div>
+
+  <section id="servicos" class="section">
     <div class="container">
-      <div class="section-title reveal">
-        <h2>Serviços</h2>
-        <p>Uma vitrine direta do que a GEJOR SOUND oferece para quem quer melhorar o som do carro com segurança, estética e desempenho.</p>
-      </div>
-
-      <div class="services">
-        <article class="card reveal">
-          <div class="icon">🔈</div>
-          <h3>Som interno</h3>
-          <p>Melhoria de alto-falantes, players, módulos e regulagem para um áudio limpo no dia a dia.</p>
-        </article>
-
-        <article class="card reveal">
-          <div class="icon">📦</div>
-          <h3>Caixas personalizadas</h3>
-          <p>Projetos para grave, médio e agudo com visual bonito, montagem organizada e presença.</p>
-        </article>
-
-        <article class="card reveal">
-          <div class="icon">⚡</div>
-          <h3>Instalação elétrica</h3>
-          <p>Passagem de cabos, alimentação, proteção e ligação pensada para preservar o veículo.</p>
-        </article>
-
-        <article class="card reveal">
-          <div class="icon">🎚️</div>
-          <h3>Regulagem</h3>
-          <p>Ajuste fino para deixar o som equilibrado, forte e agradável, evitando distorções.</p>
-        </article>
-
-        <article class="card reveal">
-          <div class="icon">💡</div>
-          <h3>Acessórios</h3>
-          <p>Instalação e acabamento de acessórios automotivos para valorizar ainda mais o projeto.</p>
-        </article>
-
-        <article class="card reveal">
-          <div class="icon">🎥</div>
-          <h3>Conteúdo automotivo</h3>
-          <p>Projetos, registros e bastidores também presentes no Instagram e no canal GEJOR Vlogs.</p>
-        </article>
+      <div class="section-head reveal"><em>Serviços</em><h2>Som forte começa com montagem certa.</h2><p>O básico bem feito ainda é o que separa projeto bonito de dor de cabeça. Aqui a pegada é tradicional: medir, organizar, proteger e entregar funcionando.</p></div>
+      <div class="cards services">
+        <article class="card reveal"><span>🔊</span><h3>Som interno</h3><p>Alto-falantes, players, módulos e melhorias para áudio limpo no dia a dia.</p></article>
+        <article class="card reveal"><span>📦</span><h3>Porta-malas personalizado</h3><p>Projeto com grave, médio, agudo, acabamento e presença visual.</p></article>
+        <article class="card reveal"><span>⚡</span><h3>Instalação elétrica</h3><p>Cabos organizados, alimentação correta, proteção e montagem segura.</p></article>
+        <article class="card reveal"><span>🎚️</span><h3>Regulagem fina</h3><p>Ajuste para som limpo, forte e sem distorção desnecessária.</p></article>
+        <article class="card reveal"><span>💡</span><h3>Acessórios</h3><p>Complementos automotivos para deixar o carro mais completo e bonito.</p></article>
+        <article class="card reveal"><span>🎥</span><h3>Conteúdo e bastidores</h3><p>Projetos registrados para Instagram e YouTube com identidade GEJOR.</p></article>
       </div>
     </div>
   </section>
 
-  <section id="portfolio">
+  <section id="projetos" class="section projects-section">
     <div class="container">
-      <div class="section-title reveal">
-        <h2>Portfólio</h2>
-        <p>Projetos reais da GEJOR SOUND, com som, carros, acabamento, instalação e personalidade.</p>
-      </div>
-
-      <div class="portfolio">
-        <article class="project reveal">
-          <img src="assets/projeto-paredao-som.jpg" alt="Projeto de som automotivo GEJOR SOUND">
-          <div class="project-info">
-            <span>PROJETO 01</span>
-            <h3>Paredão de som</h3>
-          </div>
-        </article>
-
-        <article class="project reveal">
-          <img src="assets/projeto-player-voltimetro.jpg" alt="Player e voltímetro de projeto de som">
-          <div class="project-info">
-            <span>PROJETO 02</span>
-            <h3>Player, voltímetro e acabamento</h3>
-          </div>
-        </article>
-
-        <article class="project reveal">
-          <img src="assets/instalacao-stetsom.jpg" alt="Instalação elétrica Stetsom">
-          <div class="project-info">
-            <span>PROJETO 03</span>
-            <h3>Instalação Stetsom organizada</h3>
-          </div>
-        </article>
+      <div class="section-head reveal"><em>Showroom</em><h2>Projetos reais, impacto real.</h2><p>Uma vitrine com fotos reais para mostrar o trabalho, o detalhe e a personalidade da GEJOR SOUND.</p></div>
+      <div class="showcase">
+        <article class="show-card big reveal"><img src="assets/projeto-paredao-som.jpg" alt="Paredão de som GEJOR SOUND"><div><small>Projeto 01</small><h3>Paredão de som com presença</h3><p>Visual agressivo, potência e acabamento.</p></div></article>
+        <article class="show-card reveal"><img src="assets/instalacao-stetsom.jpg" alt="Instalação Stetsom"><div><small>Projeto 02</small><h3>Stetsom organizado</h3><p>Instalação limpa e objetiva.</p></div></article>
+        <article class="show-card reveal"><img src="assets/projeto-player-voltimetro.jpg" alt="Player e voltímetro"><div><small>Projeto 03</small><h3>Player + voltímetro</h3><p>Controle, detalhe e acabamento.</p></div></article>
       </div>
     </div>
   </section>
 
-  <section id="galeria" class="gallery-section">
+  <section id="galeria" class="section gallery-section">
     <div class="container">
-      <div class="section-title reveal">
-        <h2>Galeria GEJOR</h2>
-        <p>Fotos dos carros, projetos e registros que mostram a essência da GEJOR SOUND.</p>
-      </div>
-
+      <div class="section-head reveal"><em>Galeria</em><h2>Carro, som e atitude.</h2><p>Fotos dos projetos, carros e bastidores em um visual de showroom moderno.</p></div>
       <div class="gallery">
-        <a href="assets/projeto-paredao-som.jpg" target="_blank" class="gallery-item reveal tall">
-          <img src="assets/projeto-paredao-som.jpg" alt="Som automotivo GEJOR SOUND">
-          <span>Projeto de som</span>
-        </a>
-
-        <a href="assets/projeto-player-voltimetro.jpg" target="_blank" class="gallery-item reveal">
-          <img src="assets/projeto-player-voltimetro.jpg" alt="Player Pioneer e voltímetro">
-          <span>Detalhe do player</span>
-        </a>
-
-        <a href="assets/carro-classico-gejor.jpg" target="_blank" class="gallery-item reveal wide">
-          <img src="assets/carro-classico-gejor.jpg" alt="Carro clássico GEJOR SOUND">
-          <span>Carro clássico</span>
-        </a>
-
-        <a href="assets/carro-preto-gejor.jpg" target="_blank" class="gallery-item reveal">
-          <img src="assets/carro-preto-gejor.jpg" alt="Carro preto GEJOR SOUND">
-          <span>Registro automotivo</span>
-        </a>
-
-        <a href="assets/instalacao-stetsom.jpg" target="_blank" class="gallery-item reveal tall">
-          <img src="assets/instalacao-stetsom.jpg" alt="Instalação elétrica de som automotivo">
-          <span>Instalação elétrica</span>
-        </a>
+        <a href="assets/carro-classico-gejor.jpg" target="_blank" class="g tall reveal"><img src="assets/carro-classico-gejor.jpg" alt="Carro clássico"><b>Clássico com presença</b></a>
+        <a href="assets/carro-preto-gejor.jpg" target="_blank" class="g reveal"><img src="assets/carro-preto-gejor.jpg" alt="Carro preto"><b>Registro automotivo</b></a>
+        <a href="assets/projeto-paredao-som.jpg" target="_blank" class="g wide reveal"><img src="assets/projeto-paredao-som.jpg" alt="Som automotivo"><b>Projeto de som</b></a>
+        <a href="assets/projeto-player-voltimetro.jpg" target="_blank" class="g reveal"><img src="assets/projeto-player-voltimetro.jpg" alt="Player e voltímetro"><b>Detalhe técnico</b></a>
+        <a href="assets/instalacao-stetsom.jpg" target="_blank" class="g tall reveal"><img src="assets/instalacao-stetsom.jpg" alt="Instalação elétrica"><b>Instalação limpa</b></a>
       </div>
     </div>
   </section>
 
-  <section id="sobre">
-    <div class="container about-grid">
-      <div class="about-box reveal">
-        <h3>Jorge, a força por trás da GEJOR SOUND</h3>
-        <p>
-          A GEJOR SOUND nasceu da paixão por som automotivo bem feito. O objetivo é entregar projetos bonitos,
-          funcionais e com aquele cuidado de quem entende que carro também é identidade.
-        </p>
-
-        <p>
-          O atendimento é direto, com conversa clara sobre o que o cliente deseja, o que o veículo permite
-          e qual solução combina melhor com o orçamento.
-        </p>
-
-        <div class="social-actions">
-          <a href="https://wa.me/5511948930695?text=Olá,%20vim%20pelo%20site%20da%20GEJOR%20SOUND!" target="_blank" class="btn">WhatsApp</a>
-          <a href="https://www.instagram.com/gejorsound?igsh=MWF2M3gyejY2cjdsbA==" target="_blank" class="btn secondary">Instagram</a>
-        </div>
-      </div>
-
-      <div class="check-list reveal">
-        <div class="check">✅ Atendimento personalizado para cada veículo</div>
-        <div class="check">✅ Instalação organizada e visual limpo</div>
-        <div class="check">✅ Projetos para som interno, acessórios e porta-malas</div>
-        <div class="check">✅ Portfólio com projetos reais</div>
-        <div class="check">✅ Conteúdo no Instagram e no YouTube</div>
+  <section id="metodo" class="section method-section">
+    <div class="container">
+      <div class="section-head reveal"><em>Método GEJOR</em><h2>Processo simples, resultado bonito.</h2><p>Nada de inventar moda onde não precisa: conversa clara, planejamento, montagem caprichada e entrega ajustada.</p></div>
+      <div class="steps">
+        <article class="step reveal"><b>01</b><h3>Conversa</h3><p>Entende o carro, o gosto do cliente e o objetivo do projeto.</p></article>
+        <article class="step reveal"><b>02</b><h3>Planejamento</h3><p>Define solução, equipamentos, passagem de cabos e acabamento.</p></article>
+        <article class="step reveal"><b>03</b><h3>Montagem</h3><p>Instalação organizada, protegida e feita com cuidado.</p></article>
+        <article class="step reveal"><b>04</b><h3>Entrega</h3><p>Regulagem final, teste e orientação para uso correto.</p></article>
       </div>
     </div>
   </section>
 
-  <section id="youtube" class="youtube-section">
-    <div class="container youtube-grid">
-      <div class="reveal">
-        <div class="tag"><span class="pulse"></span> Canal oficial</div>
-        <h2>GEJOR Vlogs no YouTube</h2>
-        <p>
-          Acompanhe vídeos, bastidores, projetos, carros e conteúdos da GEJOR SOUND diretamente no canal.
-        </p>
-
-        <div class="social-actions">
-          <a href="https://www.youtube.com/@GejorVlogs" target="_blank" class="btn">Acessar canal</a>
-          <a href="https://www.instagram.com/gejorsound?igsh=MWF2M3gyejY2cjdsbA==" target="_blank" class="btn secondary">Ver Instagram</a>
-        </div>
+  <section id="experiencia" class="section experience-section">
+    <div class="container experience-grid">
+      <div class="exp-copy reveal">
+        <em>Experiência</em>
+        <h2>Visual de respeito em qualquer tela.</h2>
+        <p>Essa versão foi reforçada para celular: botões grandes, menu limpo, navegação fixa embaixo, imagens ajustadas, carregamento leve e visual impactante sem travar.</p>
+        <ul><li>✅ Mobile com dock rápido</li><li>✅ Menu sem bug e com fechamento automático</li><li>✅ Animações leves e suaves</li><li>✅ Pronto para GitHub Pages</li></ul>
       </div>
-
-      <div class="youtube-frame reveal">
-        <iframe
-          src="https://www.youtube.com/embed/U4esCKGVf0I"
-          title="Vídeo GEJOR SOUND"
-          allowfullscreen>
-        </iframe>
+      <div class="phone reveal">
+        <div class="phone-top"></div>
+        <img src="assets/logo-gejor.png" alt="Logo GEJOR SOUND">
+        <h3>GEJOR SOUND</h3>
+        <p>Som automotivo premium</p>
+        <div class="phone-bars"><i></i><i></i><i></i><i></i><i></i></div>
       </div>
     </div>
   </section>
 
-  <section id="contato" class="contact">
-    <div class="container contact-card">
-      <div class="contact-info reveal">
-        <h2>Peça seu orçamento</h2>
-        <p>
-          Conte qual carro você tem e que tipo de som ou acessório deseja instalar.
-          A GEJOR SOUND retorna com uma ideia de projeto e orçamento.
-        </p>
+  <section id="youtube" class="section video-section">
+    <div class="container video-grid">
+      <div class="reveal"><em>Canal oficial</em><h2>GEJOR Vlogs no YouTube.</h2><p>Acompanhe projetos, carros, bastidores e conteúdos automotivos direto no canal.</p><a href="https://www.youtube.com/@GejorVlogs" target="_blank" rel="noopener" class="btn">Acessar canal</a></div>
+      <div class="video-frame reveal"><iframe src="https://www.youtube.com/embed/U4esCKGVf0I" title="Vídeo GEJOR SOUND" allowfullscreen></iframe></div>
+    </div>
+  </section>
 
-        <div class="contact-line">📱 WhatsApp: (11) 94893-0695</div>
-        <div class="contact-line">📸 Instagram: @gejorsound</div>
-        <div class="contact-line">▶️ YouTube: @GejorVlogs</div>
-      </div>
-
-      <form class="reveal" onsubmit="sendWhatsApp(event)">
-        <input type="text" id="nome" placeholder="Seu nome" required />
-        <input type="text" id="carro" placeholder="Modelo do carro" required />
-
-        <select id="tipo" required>
-          <option value="">Tipo de projeto</option>
-          <option>Som interno</option>
-          <option>Porta-malas personalizado</option>
-          <option>Instalação de módulo</option>
-          <option>Regulagem de som</option>
-          <option>Acessórios automotivos</option>
-          <option>Outro serviço</option>
-        </select>
-
+  <section id="contato" class="section contact-section">
+    <div class="container contact-grid">
+      <div class="contact-copy reveal"><em>Orçamento</em><h2>Bora montar seu projeto?</h2><p>Preencha o formulário e a mensagem já sai pronta no WhatsApp da GEJOR SOUND.</p><div class="contact-links"><a href="tel:+5511948930695">📱 (11) 94893-0695</a><a href="https://www.instagram.com/gejorsound?igsh=MWF2M3gyejY2cjdsbA==" target="_blank" rel="noopener">📸 @gejorsound</a><a href="https://www.youtube.com/@GejorVlogs" target="_blank" rel="noopener">▶️ @GejorVlogs</a></div></div>
+      <form class="form reveal" id="quoteForm">
+        <input id="nome" type="text" placeholder="Seu nome" required>
+        <input id="carro" type="text" placeholder="Modelo do carro" required>
+        <select id="tipo" required><option value="">Tipo de projeto</option><option>Som interno</option><option>Porta-malas personalizado</option><option>Instalação de módulo</option><option>Regulagem de som</option><option>Acessórios automotivos</option><option>Outro serviço</option></select>
         <textarea id="mensagem" placeholder="Explique o que você deseja fazer"></textarea>
-        <button class="btn" type="submit">Enviar pelo WhatsApp</button>
+        <button class="btn btn-big" type="submit">Enviar pelo WhatsApp</button>
       </form>
     </div>
   </section>
 
-  <footer>
-    <div class="container footer-grid">
-      <p>© 2026 GEJOR SOUND — Som automotivo e acessórios com qualidade, potência e acabamento.</p>
+  <footer class="footer"><div class="container footer-grid"><a href="#inicio" class="footer-brand"><img src="assets/logo-gejor.png" alt="GEJOR SOUND"><b>GEJOR SOUND</b></a><p>© 2026 GEJOR SOUND — Som automotivo e acessórios.</p><div><a href="https://www.instagram.com/gejorsound?igsh=MWF2M3gyejY2cjdsbA==" target="_blank" rel="noopener">Instagram</a><a href="https://www.youtube.com/@GejorVlogs" target="_blank" rel="noopener">YouTube</a></div></div></footer>
 
-      <div>
-        <a href="https://www.instagram.com/gejorsound?igsh=MWF2M3gyejY2cjdsbA==" target="_blank">Instagram</a>
-        <a href="https://www.youtube.com/@GejorVlogs" target="_blank">YouTube</a>
-      </div>
-    </div>
-  </footer>
-
-  <a class="whatsapp-float" href="https://wa.me/5511948930695?text=Olá,%20vim%20pelo%20site%20da%20GEJOR%20SOUND!" target="_blank" aria-label="Chamar no WhatsApp">☘</a>
-
+  <button class="top" id="topBtn" aria-label="Voltar ao topo">↑</button>
+  <a class="whats-float" href="https://wa.me/5511948930695?text=Olá,%20vim%20pelo%20site%20da%20GEJOR%20SOUND!" target="_blank" rel="noopener" aria-label="Chamar no WhatsApp">☘</a>
+  <nav class="mobile-dock" aria-label="Menu rápido mobile"><a href="#inicio">⌂<span>Início</span></a><a href="#projetos">▣<span>Projetos</span></a><a href="https://wa.me/5511948930695?text=Olá,%20vim%20pelo%20site%20da%20GEJOR%20SOUND!" target="_blank">☘<span>Whats</span></a><a href="#contato">✉<span>Contato</span></a></nav>
   <script src="js/script.js"></script>
 </body>
 </html>
